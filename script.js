@@ -13,10 +13,12 @@ window.addEventListener('scroll', () => {
 });
 
 // TYPING EFFECT
-const roles = ["CSE Student",
+const roles = [
+    "B.Tech CSE Student",
     "DSA Learner",
-    "Java & Python Enthusiast",
-    "Aspiring Software Developer"];
+    "Building Real-World Projects",
+    "Aspiring Software Engineer"
+];
 let i = 0, j = 0;
 let current = "";
 let isDeleting = false;
