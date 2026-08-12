@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hanshika Mukati | AI/ML & Software Developer</title>
+
+    <meta name="description"
+          content="Hanshika Mukati - Computer Science undergraduate specializing in AI/ML, Full-Stack Development and Data Structures & Algorithms.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #080b12;
+            color: #f5f7fa;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8, 11, 18, 0.88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #1b2230;
+        }
+
+        .nav-container {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #7c5cff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #b8c0cc;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 7px 14px;
+            border: 1px solid #2d3545;
+            border-radius: 30px;
+            color: #aeb7c7;
+            font-size: 13px;
+            margin-bottom: 20px;
+            background: #10151f;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 78px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+            letter-spacing: -3px;
+        }
+
+        .hero h1 span {
+            color: #8b6cff;
+        }
+
+        .hero h2 {
+            font-size: clamp(20px, 3vw, 30px);
+            color: #c8ced8;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            color: #929baa;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 21px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #7c5cff;
+            color: white;
+        }
+
+        .primary:hover {
+            transform: translateY(-2px);
+            background: #6c4df0;
+        }
+
+        .secondary {
+            border: 1px solid #2c3442;
+            color: #d7dce5;
+        }
+
+        .secondary:hover {
+            background: #151b26;
+        }
+
+        /* SOCIALS */
+
+        .socials {
+            display: flex;
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .socials a {
+            color: #8f99a9;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            margin-bottom: 45px;
+        }
+
+        .section-title p {
+            color: #7c5cff;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 7px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .about-card {
+            padding: 28px;
+            background: #0d121b;
+            border: 1px solid #1d2532;
+            border-radius: 14px;
+        }
+
+        .about-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .about-card p {
+            color: #929baa;
+        }
+
+        /* STATS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .stat {
+            padding: 22px;
+            text-align: center;
+            background: #0d121b;
+            border: 1px solid #1d2532;
+            border-radius: 12px;
+        }
+
+        .stat h3 {
+            font-size: 27px;
+            color: #8b6cff;
+        }
+
+        .stat p {
+            font-size: 12px;
+            color: #8f99a9;
+        }
+
+        /* EXPERIENCE */
+
+        .timeline {
+            border-left: 2px solid #262f3d;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            width: 11px;
+            height: 11px;
+            background: #7c5cff;
+            border-radius: 50%;
+            position: absolute;
+            left: -37px;
+            top: 7px;
+        }
+
+        .timeline-item h3 {
+            font-size: 20px;
+        }
+
+        .timeline-item .company {
+            color: #8b6cff;
+            font-weight: 600;
+        }
+
+        .timeline-item .date {
+            color: #697384;
+            font-size: 13px;
+            margin: 5px 0 12px;
+        }
+
+        .timeline-item p {
+            color: #929baa;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #0d121b;
+            border: 1px solid #1d2532;
+            border-radius: 14px;
+            padding: 25px;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #51409d;
+        }
+
+        .project-icon {
+            font-size: 25px;
+            color: #8b6cff;
+            margin-bottom: 18px;
+        }
+
+        .project-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .project-card p {
+            color: #8f99a9;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 20px;
+        }
+
+        .tech span {
+            font-size: 11px;
+            padding: 5px 9px;
+            border-radius: 5px;
+            background: #171e2a;
+            color: #aab3c1;
+        }
+
+        .project-link {
+            margin-top: auto;
+            color: #9a87ff;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .skill-box {
+            background: #0d121b;
+            border: 1px solid #1d2532;
+            padding: 23px;
+            border-radius: 12px;
+        }
+
+        .skill-box h3 {
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+
+        .skill-box p {
+            color: #929baa;
+            font-size: 14px;
+        }
+
+        /* CERTIFICATIONS */
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .certificate {
+            padding: 22px;
+            border-radius: 12px;
+            border: 1px solid #1d2532;
+            background: #0d121b;
+        }
+
+        .certificate i {
+            color: #8b6cff;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .certificate h3 {
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .certificate a {
+            color: #9a87ff;
+            font-size: 13px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact h2 {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            color: #929baa;
+            margin-bottom: 28px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid #1b2230;
+            padding: 25px 0;
+            text-align: center;
+            color: #697384;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #080b12;
+                flex-direction: column;
+                padding: 25px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu {
+                display: block;
+            }
+
+            .about-grid,
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            .projects,
+            .certifications {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+    <div class="container nav-container">
+
+        <div class="logo">
+            Hanshika<span>.</span>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="menu" onclick="toggleMenu()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <span class="tag">
+                Computer Science Undergraduate • AI/ML • Software Development
+            </span>
+
+            <h1>
+                Hi, I'm <span>Hanshika</span> 👋
+            </h1>
+
+            <h2>
+                Building intelligent solutions with AI & software.
+            </h2>
+
+            <p>
+                Computer Science undergraduate at Mody University of Science and
+                Technology with hands-on experience in Artificial Intelligence,
+                Machine Learning, Full-Stack Development, and applied research
+                through a DRDO internship.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    View My Work
+                </a>
+
+                <a href="resume.pdf" class="btn secondary" target="_blank">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    Resume
+                </a>
+
+            </div>
+
+            <div class="socials">
+
+                <a href="https://github.com/Hanshika103" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="https://linkedin.com/in/hanshika-mukati"
+                   target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+                <a href="https://leetcode.com/u/HanshikaMukati/"
+                   target="_blank">
+                    <i class="fa-solid fa-code"></i>
+                </a>
+
+                <a href="mailto:hanshikamukati10@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+            <p>01 — About</p>
+            <h2>Who I Am</h2>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-card">
+
+                <h3>My Focus</h3>
+
+                <p>
+                    I enjoy solving engineering problems using AI and software
+                    development. My current focus areas include Machine Learning,
+                    Data Structures & Algorithms, Full-Stack Development and
+                    emerging AI technologies.
+                </p>
+
+            </div>
+
+            <div class="about-card">
+
+                <h3>What I Build</h3>
+
+                <p>
+                    From machine learning platforms and AI-powered applications
+                    to intelligent antenna design systems, I like turning ideas
+                    into practical and usable software.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat">
+                <h3>9.47</h3>
+                <p>CGPA / 10</p>
+            </div>
+
+            <div class="stat">
+                <h3>DRDO</h3>
+                <p>Summer Internship</p>
+            </div>
+
+            <div class="stat">
+                <h3>3+</h3>
+                <p>Major Projects</p>
+            </div>
+
+            <div class="stat">
+                <h3>2028</h3>
+                <p>Graduation</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-title">
+            <p>02 — Experience</p>
+            <h2>Experience</h2>
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <h3>Summer Intern</h3>
+
+                <div class="company">
+                    Defence Research and Development Organisation (DRDO)
+                </div>
+
+                <div class="date">
+                    June 2026 — July 2026 • Jodhpur
+                </div>
+
+                <p>
+                    Developed an AI-driven inverse design system for rectangular
+                    microstrip patch antennas using XGBoost Regression to predict
+                    optimal antenna dimensions from desired operating frequency.
+                </p>
+
+                <br>
+
+                <p>
+                    Built the <strong>Patch Antenna AI</strong> application with
+                    automated dimension prediction and interactive 3D
+                    visualization using Python, Streamlit and Plotly.
+                </p>
+
+                <br>
+
+                <p>
+                    Designed, simulated and fabricated a Vivaldi antenna using
+                    CST Studio Suite and analyzed S11, radiation pattern, gain
+                    and bandwidth.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-title">
+            <p>03 — Projects</p>
+            <h2>Featured Projects</h2>
+        </div>
+
+        <div class="projects">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+
+                <h3>ML Arena</h3>
+
+                <p>
+                    End-to-end machine learning platform supporting dataset
+                    upload, preprocessing, model training, evaluation,
+                    comparison and prediction.
+                </p>
+
+                <div class="tech">
+                    <span>Python</span>
+                    <span>Streamlit</span>
+                    <span>Scikit-learn</span>
+                    <span>Pandas</span>
+                    <span>NumPy</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/Hanshika103/ML-Arena"
+                   target="_blank">
+
+                    View on GitHub →
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <h3>AI Medical Report Analyzer</h3>
+
+                <p>
+                    AI-powered web application for medical report analysis and
+                    patient health risk prediction using Random Forest and a
+                    Flask backend.
+                </p>
+
+                <div class="tech">
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>Scikit-learn</span>
+                    <span>JavaScript</span>
+                    <span>Random Forest</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/Hanshika103/-AI-Medical-Report-Analyzer"
+                   target="_blank">
+
+                    View on GitHub →
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project-card">
+
+                <div class="project-icon">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                </div>
+
+                <h3>AI Resume Analyzer</h3>
+
+                <p>
+                    AI-powered career assistant that analyzes resumes,
+                    extracts skills, calculates ATS scores, recommends job
+                    roles and generates interview questions.
+                </p>
+
+                <div class="tech">
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>NLP</span>
+                    <span>PyPDF2</span>
+                    <span>JavaScript</span>
+                </div>
+
+                <a class="project-link"
+                   href="https://github.com/Hanshika103/AI-Resume-Analysis---Job-Creation"
+                   target="_blank">
+
+                    View on GitHub →
+                </a>
+
+            </div>
+
+            <!-- PROJECT 4 -->
+
+<div class="project-card">
+
+    <div class="project-icon">
+        <i class="fa-solid fa-utensils"></i>
+    </div>
+
+    <h3>Campus Food Booking System</h3>
+
+    <p>
+        Developed a Java-based food booking system for college students
+        that enables user authentication, food menu browsing, direct order
+        placement, and order management. Implemented an admin module for
+        managing food items and integrated MySQL for persistent data storage.
+    </p>
+
+    <div class="tech">
+        <span>Java</span>
+        <span>Java Swing</span>
+        <span>MySQL</span>
+        <span>JDBC</span>
+        <span>OOP</span>
+    </div>
+
+    <a class="project-link"
+       href="https://github.com/Hanshika103/Food_Booking_System-Using-Core-Java-Java-Swing"
+       target="_blank">
+
+        View on GitHub →
+    </a>
+
+            </div>
+
+            <!-- PROJECT 5 -->
+
+<div class="project-card">
+
+    <div class="project-icon">
+        <i class="fa-solid fa-shield-halved"></i>
+    </div>
+
+    <h3>BankGuard – AI Banking Fraud Detection</h3>
+
+    <p>
+        Developed an AI-powered banking transaction fraud detection system
+        that analyzes transaction data to identify potentially fraudulent
+        activities and support secure financial decision-making.
+    </p>
+
+    <div class="tech">
+        <span>Python</span>
+        <span>Machine Learning</span>
+        <span>Scikit-learn</span>
+        <span>Pandas</span>
+        <span>NumPy</span>
+    </div>
+
+    <a class="project-link"
+       href="https://github.com/Hanshika103/BankGuard-AI-Banking-Transaction-Fraud-Detection-System"
+       target="_blank">
+
+        View on GitHub →
+    </a>
+
+</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-title">
+            <p>04 — Skills</p>
+            <h2>Technical Skills</h2>
+        </div>
+
+        <div class="skills">
+
+            <div class="skill-box">
+
+                <h3>Languages</h3>
+
+                <p>
+                    C++ • Python • JavaScript • SQL
+                </p>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <h3>AI & Machine Learning</h3>
+
+                <p>
+                    Regression • Classification • Model Evaluation •
+                    Scikit-learn • Pandas • NumPy • Streamlit • Plotly •
+                    Matplotlib
+                </p>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <h3>Web Development</h3>
+
+                <p>
+                    HTML • CSS • JavaScript • React.js • Flask
+                </p>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <h3>Databases</h3>
+
+                <p>
+                    MySQL • Oracle Database
+                </p>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <h3>Core Computer Science</h3>
+
+                <p>
+                    Data Structures & Algorithms • OOP • DBMS •
+                    Operating Systems • Computer Networks
+                </p>
+
+            </div>
+
+
+            <div class="skill-box">
+
+                <h3>Tools</h3>
+
+                <p>
+                    Git • GitHub • Jupyter Notebook • Anaconda •
+                    LaTeX • XAMPP
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications">
+
+    <div class="container">
+
+        <div class="section-title">
+            <p>05 — Certifications</p>
+            <h2>Certifications</h2>
+        </div>
+
+        <div class="certifications">
+
+
+            <div class="certificate">
+
+                <i class="fa-solid fa-certificate"></i>
+
+                <h3>
+                    DRDO Summer Internship Certificate
+                </h3>
+
+                <a href="https://drive.google.com/file/d/188qiQTqoHf2iWTJLsd8t23UC_9ohgWw4/view?usp=sharing"
+                   target="_blank">
+
+                    View Certificate →
+                </a>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <i class="fa-solid fa-laptop-code"></i>
+
+                <h3>
+                    Full Stack Web Development Training
+                </h3>
+
+                <a href="https://drive.google.com/file/d/1SJdHSJwen5tT9kDK5bfw-aNbhOmOg8F_/view?usp=sharing"
+                   target="_blank">
+
+                    View Certificate →
+                </a>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <i class="fa-solid fa-trophy"></i>
+
+                <h3>
+                    Mini Hackathon Participation Certificate
+                </h3>
+
+                <a href="https://drive.google.com/file/d/1CUzTp1XNfWQ9nPHbACXfX261FEAvx-B6/view?usp=sharing"
+                   target="_blank">
+
+                    View Certificate →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact">
+
+            <div class="section-title">
+                <p>06 — Contact</p>
+                <h2>Let's Build Something</h2>
+            </div>
+
+            <p>
+                I'm open to software development, AI/ML and internship
+                opportunities where I can learn, contribute and build
+                meaningful products.
+            </p>
+
+            <div class="buttons"
+                 style="justify-content:center;">
+
+                <a class="btn primary"
+                   href="mailto:hanshikamukati10@gmail.com">
+
+                    <i class="fa-solid fa-envelope"></i>
+                    Email Me
+                </a>
+
+                <a class="btn secondary"
+                   href="https://linkedin.com/in/hanshika-mukati"
+                   target="_blank">
+
+                    <i class="fa-brands fa-linkedin"></i>
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        © 2026 Hanshika Mukati • Built with HTML & CSS
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    function toggleMenu() {
+
+        document
+            .getElementById("navLinks")
+            .classList
+            .toggle("active");
+
+    }
+
+</script>
+
+</body>
+</html>
