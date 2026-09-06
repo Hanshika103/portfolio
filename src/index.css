@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    @apply bg-ink text-paper font-body antialiased;
+    background-image: linear-gradient(rgba(234,240,246,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(234,240,246,0.035) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display text-paper;
+  }
+
+  ::selection {
+    background: #E3B23C;
+    color: #0E1A2B;
+  }
+
+  a, button {
+    outline-offset: 3px;
+  }
+
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 2px solid #E3B23C;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* corner-bracket "spec sheet" frame, used sparingly on key surfaces */
+  .blueprint-frame {
+    position: relative;
+  }
+  .blueprint-frame::before,
+  .blueprint-frame::after {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-color: #E3B23C;
+    opacity: 0.8;
+  }
+  .blueprint-frame::before {
+    top: -1px;
+    left: -1px;
+    border-top: 2px solid;
+    border-left: 2px solid;
+  }
+  .blueprint-frame::after {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+  }
+
+  .section-label {
+    @apply font-mono text-xs text-brass tracking-tight;
+  }
+
+  .container-page {
+    @apply mx-auto max-w-6xl px-6 md:px-10;
+  }
+}
